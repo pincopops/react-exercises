@@ -3,15 +3,21 @@ import React from "react";
 
 export class Welcome extends React.Component{
 
-    //setting default value for name - conditional rendering
     render(){
-        if(this.props.name){
+        if(this.props.name && this.props.age){
+            return <div>
+                <p>Hello, {this.props.name}!</p>
+                <p>Your age is: {this.props.age}</p>
+
+            </div>
+        }
+        if(!this.props.age){
             return <p>Hello, {this.props.name}!</p>
-        } else{
+        }else{
             return 'Hello, User!';
         }
-
     }
 }
+
 
 
