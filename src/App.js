@@ -6,8 +6,21 @@ import { ClickCounter } from './ClickCounter';
 import { ClickTracker } from './ClickTracker';
 import { InteractiveWelcome } from './InteractiveWelcome';
 import { Login } from './Login';
+
  
 export class App extends React.Component{
+
+    state = {
+
+    }
+
+    onLogin = (data) => {
+        this.setState({
+            username: data.username,
+            password: data.password,
+        })
+    }
+
     render(){
         return <div>
                 <Hello />
@@ -16,8 +29,7 @@ export class App extends React.Component{
                 <ClickCounter />
                 <ClickTracker />
                 <InteractiveWelcome />
-                <Login />
+                <Login onLogin={this.onLogin}/>
             </div>
     }
 }
-

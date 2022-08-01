@@ -6,9 +6,9 @@ export class Login extends React.Component{
         username: "",
         password: "",
         remember: false,
-       
     }
     
+
     handleInputChanges = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -22,8 +22,8 @@ export class Login extends React.Component{
 
     }
 
-    componentDidUpdate(){
-        console.log(this.state);
+    handleButtonClick = () => {
+        this.props.onLogin(this.state);
     }
 
     render(){
@@ -31,6 +31,8 @@ export class Login extends React.Component{
             <input type="text" name="username" value={this.state.username} onChange={this.handleInputChanges}></input>
             <input type="password" name="password" value={this.state.password} onChange={this.handleInputChanges}></input>
             <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleInputChanges}></input>
+            <button disabled={!(this.state.username && this.state.password)} onClick={this.handleButtonClick}>Login</button>
+            <p>Powered by Cristian Rimbu</p>
         </div>
     }
 }
