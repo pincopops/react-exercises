@@ -36,6 +36,7 @@ export class Login extends React.Component{
 
     render(){
         return <div>
+            <h3>This is a controlled login form</h3>
             <input type="text" name="username" value={this.state.username} onChange={this.handleInputChanges}></input>
             <input type="password" name="password" value={this.state.password} onChange={this.handleInputChanges}></input>
             <input type="checkbox" name="remember" checked={this.state.remember} onChange={this.handleInputChanges}></input>
