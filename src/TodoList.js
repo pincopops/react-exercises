@@ -6,7 +6,8 @@ export class Todolist extends React.Component {
 
     state ={
         items: ["Buy Milk", "Go to the gym", "Become a Web Developer", "Call 911 now!"],
-        name: ""
+        name: "",
+        initialState: [],
         }
         
         handleTodoInsertion = (event) =>{
@@ -14,16 +15,22 @@ export class Todolist extends React.Component {
                 name: event.target.value
             })
             
+
+            
         }
     
         handleAddTodoToList = (event) =>{
             event.preventDefault() 
-    
+            
             this.setState({
                 items: [...this.state.items, this.state.name]
             })
+            
+            this.setState({
+                name: "",
+            })
         }
-    
+            
         render(){
             
             return <div>
@@ -33,5 +40,9 @@ export class Todolist extends React.Component {
             </div>
         }
 }
+
+
+
+    
 
 
