@@ -7,6 +7,7 @@ import { ClickTracker } from './ClickTracker';
 import { InteractiveWelcome } from './InteractiveWelcome';
 import { Login } from './Login';
 import { UncontrolledLogin } from './UncontrolledLogin';
+import { Todolist } from './TodoList';
 
  
 export class App extends React.Component{
@@ -32,6 +33,7 @@ export class App extends React.Component{
                 <InteractiveWelcome />
                 <Login onLogin={this.onLogin}/>
                 <UncontrolledLogin />
+                <Todolist />
             </div>
     }
 }
