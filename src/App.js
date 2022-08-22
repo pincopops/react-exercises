@@ -28,7 +28,7 @@ export class App extends React.Component{
 
     render(){
         return <div>
-                <Container >
+                <Container title="My Awesome Application">
                     <Hello />
                     <Welcome />
                     <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
