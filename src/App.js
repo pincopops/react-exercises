@@ -8,6 +8,7 @@ import { InteractiveWelcome } from './InteractiveWelcome';
 import { Login } from './Login';
 import { UncontrolledLogin } from './UncontrolledLogin';
 import { Todolist } from './TodoList';
+import { Container } from './Container';
 
 
 
@@ -27,16 +28,17 @@ export class App extends React.Component{
 
     render(){
         return <div>
-                <Hello />
-                <Welcome />
-                <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
-                <ClickCounter />
-                <ClickTracker />
-                <InteractiveWelcome />
-                <Login onLogin={this.onLogin}/>
-                <UncontrolledLogin />
-                <Todolist />
-                
+                <Container >
+                    <Hello />
+                    <Welcome />
+                    <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
+                    <ClickCounter />
+                    <ClickTracker />
+                    <InteractiveWelcome />
+                    <Login onLogin={this.onLogin}/>
+                    <UncontrolledLogin />
+                    <Todolist />
+                </Container>
             </div>
     }
 }
