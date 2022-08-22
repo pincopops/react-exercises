@@ -7,7 +7,7 @@ export class Welcome extends React.Component{
     render(){
         
          //if(this.props.name === 'John' && this.props.age <65){
-            return <div>
+            return <div className="welcome">
                 <p>Hello, {this.props.username}!</p>
                 <Age age={this.props.age}/>
             </div>
