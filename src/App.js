@@ -31,7 +31,7 @@ export class App extends React.Component {
         return <div>
             <Container title="My Awesome Application">
                 <Hello />
-                <Welcome />
+                <Welcome username="Elio"/>
                 <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
                 <ClickCounter />
                 <ClickTracker />
