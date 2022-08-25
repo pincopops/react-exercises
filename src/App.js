@@ -9,6 +9,7 @@ import { Login } from './Login';
 import { UncontrolledLogin } from './UncontrolledLogin';
 import { Todolist } from './TodoList';
 import { Container } from './Container';
+import { Sum } from './Sum';
 
 
 
@@ -50,6 +51,7 @@ export class App extends React.Component {
                             }}>Remove "{item}"</button></ul></div>
                     })
                 }} />
+                <Sum n={[10,20,30]}/>
             </Container>
         </div>
     }
