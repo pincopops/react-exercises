@@ -51,7 +51,7 @@ export class App extends React.Component {
                             }}>Remove "{item}"</button></ul></div>
                     })
                 }} />
-                <Sum n={[10,20,30]}/>
+                <Sum />
             </Container>
         </div>
     }
