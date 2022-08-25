@@ -12,8 +12,8 @@ import { Container } from './Container';
 
 
 
- 
-export class App extends React.Component{
+
+export class App extends React.Component {
 
     state = {
 
@@ -26,19 +26,32 @@ export class App extends React.Component{
         })
     }
 
-    render(){
+    render() {
+
         return <div>
-                <Container title="My Awesome Application">
-                    <Hello />
-                    <Welcome />
-                    <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
-                    <ClickCounter />
-                    <ClickTracker />
-                    <InteractiveWelcome />
-                    <Login onLogin={this.onLogin}/>
-                    <UncontrolledLogin />
-                    <Todolist />
-                </Container>
-            </div>
+            <Container title="My Awesome Application">
+                <Hello />
+                <Welcome />
+                <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
+                <ClickCounter />
+                <ClickTracker />
+                <InteractiveWelcome />
+                <Login onLogin={this.onLogin} />
+                <UncontrolledLogin />
+                <Todolist render={(arr) => {
+                    arr.map((item, index) => {
+                      return <div><ul key={item + index}><li>{item}</li>
+                            <button type="button" onClick={() => {
+                                arr.splice(index, 1)
+                                this.setState({
+                                    items: arr,
+                                    name: ""
+                                })
+                            }}>Remove "{item}"</button></ul></div>
+                    })
+                }} />
+            </Container>
+        </div>
     }
 }
+

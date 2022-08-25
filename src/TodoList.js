@@ -35,17 +35,21 @@ export class Todolist extends React.Component {
 
     render() {
         return <div>
-            <div>{this.state.items.map((item, index) => <ul key={item + index}><li>{item}</li>
+            {/* <div>{this.state.items.map((item, index) => <ul key={item + index}><li>{item}</li>
                 <button type="button" onClick={() => {
                     this.state.items.splice(index, 1)
                     this.setState({
                         items: this.state.items,
                         name: ""
                     })
-                }}>Remove "{item}"</button></ul>)}</div>
+                }}>Remove "{item}"</button></ul>)}</div> */}
             <input type="text" value={this.state.name} onChange={this.handleTodoInsertion} />
             <button type="submit" onClick={this.handleAddTodoToList}>Add To-do to list</button>
             <button type="button" onClick={this.handleResetTodoList}>Clear all those stuff</button>
+            
+            {/* così facendo stiamo dicendo al componente di portare al di fuori le proprie informazioni
+            e divulgarle ad App.js, il quale riuscirà a controllarlo tramite la props "render" */}
+            {this.props.render(this.state.items)}
 
         </div>
     }
