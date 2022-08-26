@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export function ClickCounter ({initialValue = 0}) {
+export function ClickCounter ({initialValue = 0, onCounterChange}) {
     const [counter, setCounter] = useState(initialValue)
+    
+    useEffect(() => {
+        onCounterChange(counter)
+    }, [counter, onCounterChange])
+
     
     function handleCounterClick(){
         setCounter((counter) => counter + 1)
     }
+    
     return <div>
         <button onClick={handleCounterClick}>Click to increment</button>
         <span style={{backgroundColor: "red", color: "white", borderRadius: "2rem"}}><strong>{counter}</strong></span>

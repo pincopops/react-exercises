@@ -34,7 +34,7 @@ export class App extends React.Component {
                 <Hello />
                 <Welcome username="Elio"/>
                 <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
-                <ClickCounter />
+                <ClickCounter onCounterChange={(counter) => {counter === 1 ? console.log(`You've clicked ${counter} time`) : console.log(`You've clicked ${counter} times`)}}/>
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login onLogin={this.onLogin} />
