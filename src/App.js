@@ -10,6 +10,7 @@ import { UncontrolledLogin } from './UncontrolledLogin';
 import { Todolist } from './TodoList';
 import { Container } from './Container';
 import { Sum } from './Sum';
+import { GithubUser } from './GithubUser';
 
 
 
@@ -52,6 +53,7 @@ export class App extends React.Component {
                     })
                 }} />
                 <Sum />
+                <GithubUser username="pincopops"/>
             </Container>
         </div>
     }
