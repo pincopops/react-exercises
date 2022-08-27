@@ -33,7 +33,7 @@ export class App extends React.Component {
             <Container title="My Awesome Application">
                 <Hello />
                 <Welcome username="Elio"/>
-                <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
+                <Counter />
                 <ClickCounter onCounterChange={(counter) => {counter === 1 ? console.log(`You've clicked ${counter} time`) : console.log(`You've clicked ${counter} times`)}}/>
                 <ClickTracker />
                 <InteractiveWelcome />
