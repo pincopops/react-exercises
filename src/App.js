@@ -11,6 +11,7 @@ import { Todolist } from './TodoList';
 import { Container } from './Container';
 import { Sum } from './Sum';
 import { GithubUser } from './GithubUser';
+import { GithubUserList } from './GithubUserList';
 
 
 
@@ -54,6 +55,7 @@ export class App extends React.Component {
                 }} />
                 <Sum />
                 <GithubUser username="pincopops"/>
+                <GithubUserList />
             </Container>
         </div>
     }
