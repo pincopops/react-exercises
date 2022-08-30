@@ -1,37 +1,39 @@
-import React from 'react';
-import { Hello } from './Hello';
-import { Welcome } from './Welcome';
-import { Counter } from './Counter';
-import { ClickCounter } from './ClickCounter';
-import { ClickTracker } from './ClickTracker';
-import { InteractiveWelcome } from './InteractiveWelcome';
-import { Login } from './Login';
-import { UncontrolledLogin } from './UncontrolledLogin';
-import { Todolist } from './TodoList';
-import { Container } from './Container';
-import { Sum } from './Sum';
-import { GithubUser } from './GithubUser';
-import { GithubUserList } from './GithubUserList';
+// import { Hello } from './Hello';
+// import { Counter } from './Counter';
+// import { ClickCounter } from './ClickCounter';
+// import { ClickTracker } from './ClickTracker';
+// import { InteractiveWelcome } from './InteractiveWelcome';
+// import { Login } from './Login';
+// import { UncontrolledLogin } from './UncontrolledLogin';
+// import { Todolist } from './TodoList';
+// import { Container } from './Container';
+// import { Sum } from './Sum';
+// import { GithubUser } from './GithubUser';
+// import { GithubUserList } from './GithubUserList';
+import { BrowserRouter } from "react-router-dom";
+import { App2 } from "./App2";
 
 
 
 
-export class App extends React.Component {
 
-    state = {
+export function App() {
 
-    }
+    // state = {
 
-    onLogin = (data) => {
-        this.setState({
-            username: data.username,
-            password: data.password,
-        })
-    }
+    // }
 
-    render() {
+    // onLogin = (data) => {
+    //     this.setState({
+    //         username: data.username,
+    //         password: data.password,
+    //     })
+    // }
 
-        return <div>
+    return (
+
+        <div>
+            {/*
             <Container title="My Awesome Application">
                 <Hello />
                 <Welcome username="Elio"/>
@@ -56,8 +58,15 @@ export class App extends React.Component {
                 <Sum />
                 <GithubUser username="pincopops"/>
                 <GithubUserList />
-            </Container>
+            </Container> */}
+            <BrowserRouter>
+                <App2 />
+            </BrowserRouter>
         </div>
-    }
+    )
 }
+
+
+
+
 
