@@ -8,7 +8,7 @@ export function App2() {
     return (
         <div>
             <Routes>
-                <Route index path="/" element={<Welcome username="Elio"/>}/>
+                <Route path="/" element={<Welcome username="Elio"/>}/>
                 <Route path="counter" element={<Counter />}/>
                 <Route path="users/:username" element={<ShowGithubUser />}/>
             </Routes>

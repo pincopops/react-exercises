@@ -10,7 +10,7 @@
 // import { Sum } from './Sum';
 // import { GithubUser } from './GithubUser';
 // import { GithubUserList } from './GithubUserList';
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Link, renderMatches } from "react-router-dom";
 import { App2 } from "./App2";
 import { Container } from "./Container";
 
@@ -31,8 +31,12 @@ export function App() {
     //     })
     // }
 
+    const linkTemplate = {
+        margin: "0.5rem",
+        color: "blue",
+        textDecoration: "none",
+    }
     return (
-
         <div>
             {/*
             <Container title="My Awesome Application">
@@ -63,6 +67,9 @@ export function App() {
             <BrowserRouter>
                 <Container title="My awesome app">
                     <App2 />
+                    <Link to="/" style={linkTemplate}>Home</Link>
+                    <Link to="counter" style={linkTemplate}>Go to Counter</Link>
+                    <Link to="users/pincopops" style={linkTemplate}>Check the User</Link>
                 </Container>
             </BrowserRouter>
         </div>
