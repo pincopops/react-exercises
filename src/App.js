@@ -12,6 +12,7 @@
 // import { GithubUserList } from './GithubUserList';
 import { BrowserRouter } from "react-router-dom";
 import { App2 } from "./App2";
+import { Container } from "./Container";
 
 
 
@@ -60,11 +61,14 @@ export function App() {
                 <GithubUserList />
             </Container> */}
             <BrowserRouter>
-                <App2 />
+                <Container title="My awesome app">
+                    <App2 />
+                </Container>
             </BrowserRouter>
         </div>
     )
 }
+
 
 
 

@@ -12,6 +12,7 @@ export class Container extends React.Component{
             <div>
                 <h1>{this.props.title}</h1>
             </div>
+            <hr/>
             <div>
                 {this.props.children}
             </div>
