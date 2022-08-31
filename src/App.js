@@ -66,10 +66,10 @@ export function App() {
             </Container> */}
             <BrowserRouter>
                 <Container title="My awesome app">
-                    <App2 />
                     <Link to="/" style={linkTemplate}>Home</Link>
                     <Link to="counter" style={linkTemplate}>Go to Counter</Link>
                     <Link to="users/pincopops" style={linkTemplate}>Check the User</Link>
+                    <App2 />
                 </Container>
             </BrowserRouter>
         </div>
