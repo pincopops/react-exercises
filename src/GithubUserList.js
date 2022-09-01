@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 
 export function GithubUserList() {
     const [array, setArray] = useState([])
@@ -35,6 +35,8 @@ export function GithubUserList() {
                      {array && array.map((username, index) => {
                         return (<Link to={`${username}`} key={username + index}>GithubUser: {username}</Link>)
                     })}
+                    
+                    <Outlet />
                 </div>
             </div>
         </div>

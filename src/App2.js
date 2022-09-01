@@ -11,7 +11,8 @@ export function App2() {
             <Routes>
                 <Route path="/" element={<Welcome username="Elio" />} />
                 <Route path="counter" element={<Counter />} />
-                <Route path="users/" element={<GithubUserList />}>
+                <Route path="users" element={<GithubUserList />}>
+                    <Route index element={<p>Add a user and select it</p>} />
                     <Route path=":username" element={<ShowGithubUser />} />
                 </Route>
                 <Route path="*" element={<div><h1>Error 505: I've ever wanted to write that one 🤩 !</h1></div>}></Route>
