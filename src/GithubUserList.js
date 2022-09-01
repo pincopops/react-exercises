@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { GithubUser } from "./GithubUser"
+import { Link } from "react-router-dom"
 
 export function GithubUserList() {
     const [array, setArray] = useState([])
@@ -29,8 +29,11 @@ export function GithubUserList() {
             <div>
                 <h1>Fetched users:</h1>
                 <div>
-                    {array && array.map((item, index) => {
+                    {/* {array && array.map((item, index) => {
                         return (<GithubUser key={item + index} username={item} />)
+                    })} */}
+                     {array && array.map((username, index) => {
+                        return (<Link to={`${username}`} key={username + index}>GithubUser: {username}</Link>)
                     })}
                 </div>
             </div>

@@ -10,7 +10,7 @@
 // import { Sum } from './Sum';
 // import { GithubUser } from './GithubUser';
 // import { GithubUserList } from './GithubUserList';
-import { BrowserRouter, Link, renderMatches } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import { App2 } from "./App2";
 import { Container } from "./Container";
 
@@ -68,7 +68,7 @@ export function App() {
                 <Container title="My awesome app">
                     <Link to="/" style={linkTemplate}>Home</Link>
                     <Link to="counter" style={linkTemplate}>Go to Counter</Link>
-                    <Link to="users/pincopops" style={linkTemplate}>Check the User</Link>
+                    <Link to="users" style={linkTemplate}>Check the User</Link>
                     <App2 />
                 </Container>
             </BrowserRouter>
