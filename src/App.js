@@ -10,9 +10,6 @@ import { UncontrolledLogin } from './UncontrolledLogin';
 import { Todolist } from './TodoList';
 import { Container } from './Container';
 
-
-
-
 export class App extends React.Component {
 
     state = {
@@ -38,20 +35,27 @@ export class App extends React.Component {
                 <InteractiveWelcome />
                 <Login onLogin={this.onLogin} />
                 <UncontrolledLogin />
-                <Todolist render={(arr) => {
-                    arr.map((item, index) => {
-                      return <div><ul key={item + index}><li>{item}</li>
-                            <button type="button" onClick={() => {
-                                arr.splice(index, 1)
-                                this.setState({
-                                    items: arr,
-                                    name: ""
-                                })
-                            }}>Remove "{item}"</button></ul></div>
-                    })
+                <Todolist render={(arr, deleteItem) => {
+                    return (
+                        <ul>
+                            {arr.map((item, index) => {
+                                return (
+                                    <div key={item + index}>
+                                        <li>
+                                            {item}
+                                            <button onClick={() => deleteItem(arr, index)}
+                                            >{`Remove ${item}`}</button>
+                                        </li>
+                                    </div>
+                                )
+                            })}
+                        </ul>
+                    )
                 }} />
             </Container>
         </div>
     }
 }
+
+
 
