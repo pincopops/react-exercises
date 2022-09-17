@@ -53,6 +53,7 @@ export class App extends React.Component {
                     <LanguageContext.Provider value={this.state.language}>
                         <Counter initialStateValue={0} incrementedBy={1} updateTime={1000} />
                     </LanguageContext.Provider>
+                    
                     <ClickCounter />
                     <ClickTracker />
                     <InteractiveWelcome />
