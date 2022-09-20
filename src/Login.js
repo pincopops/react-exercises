@@ -1,51 +1,23 @@
 import React from "react";
-import { useState } from "react";
+import { useForm } from "./custom hooks/useForm";
 
 
 export function Login (){
-    const [data, setData] = useState({
-        username:"",
-        password:"",
-        remember: false,
-    })
-    
-    function handleInputChange(event) {
-        const {name, type, value, checked} = event.target
-
-        setData((data) => {
-            return {
-                ...data, 
-                [name]: type === "checkbox" ? checked : value
-
-            }
-        })
-    }
-
-    function handleLoginButton() {
-        console.log(data)
-    }
-
-    function handleResetButton(){
-        setData({
-            username:"",
-            password:"",
-            remember:false, 
-        })
-    }
+    const {username, password, remember, inputChange, loginButton, resetButton} = useForm();
     
     
     const myLoginButtonCss = {
-        backgroundColor: data.password.length < 8 ? "red" : "green",
+        backgroundColor: password.length < 8 ? "red" : "green",
     }
 
     return (
     <div>
         <h3>This is a Function Component login form</h3>
-        <input onChange={handleInputChange} type="text" name="username" value={data.username}></input>
-        <input onChange={handleInputChange} type="password" name="password" value={data.password}></input>
-        <input onChange={handleInputChange} type="checkbox" name="remember" checked={data.remember}></input>
-        <button style={myLoginButtonCss} disabled={!(data.username && data.password)} onClick={handleLoginButton}>Login</button>
-        <button onClick={handleResetButton}>Reset</button>
+        <input onChange={inputChange} type="text" name="username" value={username}></input>
+        <input onChange={inputChange} type="password" name="password" value={password}></input>
+        <input onChange={inputChange} type="checkbox" name="remember" checked={remember}></input>
+        <button style={myLoginButtonCss} disabled={!(username && password)} onClick={loginButton}>Login</button>
+        <button onClick={resetButton}>Reset</button>
 
     </div>)
 }

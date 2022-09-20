@@ -41,18 +41,6 @@ export class App extends React.Component {
                 <InteractiveWelcome />
                 <Login onLogin={this.onLogin} />
                 <UncontrolledLogin />
-                <Todolist render={(arr) => {
-                    arr.map((item, index) => {
-                      return <div><ul key={item + index}><li>{item}</li>
-                            <button type="button" onClick={() => {
-                                arr.splice(index, 1)
-                                this.setState({
-                                    items: arr,
-                                    name: ""
-                                })
-                            }}>Remove "{item}"</button></ul></div>
-                    })
-                }} />
                 <Sum />
                 <GithubUser username="pincopops"/>
                 <GithubUserList />
