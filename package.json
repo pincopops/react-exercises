@@ -15,7 +15,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "s1": "git status",
+    "s2": "git add .",
+    "s3": "git commit",
+    "s4": "npm run s1 && npm run s2 && npm run s3"
   },
   "eslintConfig": {
     "extends": [
