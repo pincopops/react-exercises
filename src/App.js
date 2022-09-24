@@ -12,8 +12,7 @@ import { Container } from './Container';
 import { Sum } from './Sum';
 import { GithubUser } from './GithubUser';
 import { GithubUserList } from './GithubUserList';
-
-
+import { FilteredList } from "./FilteredList";
 
 
 export class App extends React.Component {
@@ -34,16 +33,17 @@ export class App extends React.Component {
         return <div>
             <Container title="My Awesome Application">
                 <Hello />
-                <Welcome username="Elio"/>
+                <Welcome username="Elio" />
                 <Counter />
-                <ClickCounter onCounterChange={(counter) => {counter === 1 ? console.log(`You've clicked ${counter} time`) : console.log(`You've clicked ${counter} times`)}}/>
+                <ClickCounter onCounterChange={(counter) => { counter === 1 ? console.log(`You've clicked ${counter} time`) : console.log(`You've clicked ${counter} times`) }} />
                 <ClickTracker />
                 <InteractiveWelcome />
                 <Login onLogin={this.onLogin} />
                 <UncontrolledLogin />
                 <Sum />
-                <GithubUser username="pincopops"/>
+                <GithubUser username="pincopops" />
                 <GithubUserList />
+                <FilteredList />
             </Container>
         </div>
     }
